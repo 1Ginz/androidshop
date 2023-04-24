@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".Activity.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#ffff"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/uyu"/>
+        <EditText
+            android:hint="Tên tài khoản"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:drawableStart="@drawable/me1"
+            android:drawableLeft="@drawable/me1"
+            android:background="@drawable/botron_edt"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/edt_user"/>
+        <EditText
+            android:hint="Mật khẩu"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:pointerIcon="cell"
+            android:drawableStart="@drawable/pass"
+            android:drawableLeft="@drawable/pass"
+            android:background="@drawable/botron_edt"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/edt_pass"/>
+        <CheckBox
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ghi nhớ tài khoản ?"
+            android:layout_gravity="end"
+            android:id="@+id/cb_remember"/>
+        <TextView
+            android:textColor="#222"
+            android:id="@+id/imv_addacc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Chưa có tài khoản ? Đăng kí tại đây"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="32dp"/>
+
+        <TextView
+            android:id="@+id/imv_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="Quên mật khẩu?"
+            android:textColor="#222" />
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:id="@+id/btn_login"
+            android:text="L O G I N"
+            android:textSize="20sp"
+            android:background="@drawable/botron_btn"
+            android:textColor="#fff"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:visibility="invisible"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/addacc"
+                android:id="@+id/imv_addaccc"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/facebook"
+                android:id="@+id/imv_fb"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/imv_gm"
+                android:src="@drawable/gmail"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:visibility="invisible"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/imv_resetz"
+                android:src="@drawable/resetpass"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

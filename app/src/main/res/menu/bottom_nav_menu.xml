@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Trang chủ" />
+
+    <item
+        android:id="@+id/add_foodFragment"
+        android:icon="@drawable/add"
+        android:title="Thêm món" />
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/myorder"
+        android:title="Đơn hàng" />
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/me"
+        android:title="Tài khoản" />
+
+</menu>
