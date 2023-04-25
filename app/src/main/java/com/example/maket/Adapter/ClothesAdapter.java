@@ -1,19 +1,11 @@
 package com.example.maket.Adapter;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.text.Layout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,9 +15,8 @@ import com.example.maket.Entity.Foody;
 import com.example.maket.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
+public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHolder> {
 
     ArrayList<Foody> foodyArrayList;
     Context context;
@@ -41,7 +32,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         mListener=clickListener;
     }
 
-    public FoodAdapter(ArrayList<Foody> foodyArrayList, Context context) {
+    public ClothesAdapter(ArrayList<Foody> foodyArrayList, Context context) {
         this.foodyArrayList = foodyArrayList;
         this.context = context;
     }
@@ -51,7 +42,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context= parent.getContext();
         LayoutInflater inflater= LayoutInflater.from(context);
-        View Holder = inflater.inflate(R.layout.food_item,parent,false);
+        View Holder = inflater.inflate(R.layout.clothes_item,parent,false);
         ViewHolder viewHolder = new ViewHolder(Holder,mListener);
         return viewHolder;
     }
@@ -79,8 +70,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView , final OnItemClickListener listener) {
             super(itemView);
             view=itemView;
-            mImageViewFood=itemView.findViewById(R.id.img_food);
-            mTextViewName=itemView.findViewById(R.id.tv_namefood);
+            mImageViewFood=itemView.findViewById(R.id.img_clothes);
+            mTextViewName=itemView.findViewById(R.id.tv_nameclothes);
             mTextViewCategory=itemView.findViewById(R.id.tv_category);
             mTextViewPrice=itemView.findViewById(R.id.tv_price);
             mTextViewDetail=itemView.findViewById(R.id.tv_detail);

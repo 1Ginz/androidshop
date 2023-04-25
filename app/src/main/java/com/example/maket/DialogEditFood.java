@@ -62,10 +62,10 @@ public class DialogEditFood extends AppCompatDialogFragment {
             }
         });
 
-        mEditTextName = view.findViewById(R.id.edt_namefood_dal);
+        mEditTextName = view.findViewById(R.id.edt_nameitem_dal);
         mEditTextPrice = view.findViewById(R.id.edt_price_dal);
         mEditTextReview = view.findViewById(R.id.edt_review_dal);
-        mImageView = view.findViewById(R.id.imv_add_food_dal);
+        mImageView = view.findViewById(R.id.imv_add_item_dal);
         mButtonCamera = view.findViewById(R.id.imv_camera_dal);
         mButtonFolder = view.findViewById(R.id.imv_folder_dal);
         mButton=view.findViewById(R.id.btn_edit_dal);

@@ -10,10 +10,10 @@
     <EditText
         android:layout_marginTop="10dp"
         android:layout_height="27dp"
-        android:hint="Nhập tên món ăn"
+        android:hint="Nhập tên sản phẩm"
         android:layout_gravity="center"
         android:layout_width="280dp"
-        android:id="@+id/edt_namefood_dal"
+        android:id="@+id/edt_nameitem_dal"
         android:gravity="center"
         android:background="@drawable/botron_edt"
         />
@@ -30,7 +30,7 @@
         android:layout_gravity="center"
         android:layout_width="280dp"
         android:layout_height="27dp"
-        android:hint="Nhập review"
+        android:hint="Nhập mô tả"
         android:gravity="center"
         android:id="@+id/edt_review_dal"
         android:background="@drawable/botron_edt"
@@ -61,7 +61,7 @@
         android:layout_height="130dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:id="@+id/imv_add_food_dal"/>
+        android:id="@+id/imv_add_item_dal"/>
     <Button
         android:layout_width="200dp"
 

@@ -46,11 +46,11 @@ public class AddItemFragment extends Fragment {
     private EditText mEditText_name;
     private EditText mEditText_price;
     private EditText mEditText_discribe;
-    private Spinner mSpinner_food;
+    private Spinner mSpinner_item;
     private Button mButton_add;
     private ImageButton mimageButton_camera;
     private ImageButton mimageButton_folder;
-    private ImageView mImageView_imagesfood;
+    private ImageView mImageView_imagesitem;
     Context context;
     private List<String> list;
     Bitmap bitmapImages = null;
@@ -64,14 +64,14 @@ public class AddItemFragment extends Fragment {
         addItemVIewModel =
                 ViewModelProviders.of(this).get(AddItemVIewModel.class);
         View root = inflater.inflate(R.layout.fragment_add_item, container, false);
-        mEditText_name = root.findViewById(R.id.edt_namefood);
+        mEditText_name = root.findViewById(R.id.edt_nameitem);
         mEditText_price = root.findViewById(R.id.edt_price);
         mEditText_discribe = root.findViewById(R.id.edt_describe);
-        mButton_add = root.findViewById(R.id.btn_addfood);
+        mButton_add = root.findViewById(R.id.btn_additem);
         mimageButton_camera = root.findViewById(R.id.imv_camera);
         mimageButton_folder = root.findViewById(R.id.imv_folder);
-        mImageView_imagesfood = root.findViewById(R.id.imv_add_food);
-        mSpinner_food = root.findViewById(R.id.spn_food);
+        mImageView_imagesitem = root.findViewById(R.id.imv_add_item);
+        mSpinner_item = root.findViewById(R.id.type_item);
         list = new ArrayList<>();
         list.add("Áo");
         list.add("Quần");
@@ -100,7 +100,7 @@ public class AddItemFragment extends Fragment {
 
             }
         };
-        mSpinner_food.setAdapter(adapter);
+        mSpinner_item.setAdapter(adapter);
 
         mEditText_price.setInputType(InputType.TYPE_CLASS_NUMBER |
                 InputType.TYPE_NUMBER_VARIATION_NORMAL);
@@ -126,7 +126,7 @@ public class AddItemFragment extends Fragment {
         mButton_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String loai = mSpinner_food.getSelectedItem().toString();
+                String loai = mSpinner_item.getSelectedItem().toString();
                 String name = mEditText_name.getText().toString();
                 String pri = mEditText_price.getText().toString();
                 String review = mEditText_discribe.getText().toString();
@@ -165,7 +165,6 @@ public class AddItemFragment extends Fragment {
             }
         });
 
-        getActivity().setTitle("Add item");
         return root;
     }
 
@@ -176,7 +175,7 @@ public class AddItemFragment extends Fragment {
         {
             try {
                 Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                mImageView_imagesfood.setImageBitmap(bitmap);
+                mImageView_imagesitem.setImageBitmap(bitmap);
                 bitmapImages = bitmap;
             } catch (Exception e) {
                 Log.e("erro", "" + e);
@@ -189,7 +188,7 @@ public class AddItemFragment extends Fragment {
                 InputStream inputStream = getContext().getContentResolver().openInputStream(uri);
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 bitmapImages = bitmap;
-                mImageView_imagesfood.setImageURI(data.getData());
+                mImageView_imagesitem.setImageURI(data.getData());
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

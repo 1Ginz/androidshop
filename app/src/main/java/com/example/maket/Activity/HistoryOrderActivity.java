@@ -7,16 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.example.maket.Adapter.FoodAdapter;
 import com.example.maket.Adapter.HistoryOrderAdapter;
 import com.example.maket.Database.BuyDatabase;
-import com.example.maket.Database.OrderDatabase;
 import com.example.maket.Entity.Buy;
-import com.example.maket.Entity.Foody;
-import com.example.maket.Entity.Order;
 import com.example.maket.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryOrderActivity extends AppCompatActivity {

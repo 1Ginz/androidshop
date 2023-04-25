@@ -1,7 +1,6 @@
 package com.example.maket.ui.home;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -13,23 +12,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.maket.Adapter.FoodAdapter;
+import com.example.maket.Adapter.ClothesAdapter;
 import com.example.maket.Adapter.ImagesAdapter;
 import com.example.maket.BottomSheet;
 import com.example.maket.DAO.AppDatabase;
 import com.example.maket.Database.OrderDatabase;
-import com.example.maket.DialogEditFood;
 import com.example.maket.Entity.Foody;
 import com.example.maket.Entity.Order;
 import com.example.maket.Model.Image;
@@ -37,14 +32,13 @@ import com.example.maket.R;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment implements BottomSheet.BottomSheetListener {
     private GridView mGridViewIntro;
     private RecyclerView mRecyclerViewFood;
     private ArrayList<Image> imageArrayList = new ArrayList<>();
     private ImagesAdapter images_adapter;
-    private FoodAdapter foodAdapter;
+    private ClothesAdapter clothesAdapter;
     private HomeViewModel homeViewModel;
     private EditText mSearchView;
     Context context;
@@ -57,7 +51,7 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
         = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mGridViewIntro = root.findViewById(R.id.gv_intro);
-        mRecyclerViewFood = root.findViewById(R.id.rcl_food);
+        mRecyclerViewFood = root.findViewById(R.id.rcl_clothes);
         mSearchView = root.findViewById(R.id.sv_serch);
         mSearchView.addTextChangedListener(new TextWatcher() {
             @Override
@@ -80,12 +74,12 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
         db = AppDatabase.getInstance(getContext());
 
         foodies = (ArrayList<Foody>) db.daoFood().FOODY_LIST();
-        foodAdapter = new FoodAdapter((ArrayList<Foody>) foodies, getContext());
+        clothesAdapter = new ClothesAdapter((ArrayList<Foody>) foodies, getContext());
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
         mRecyclerViewFood.setLayoutManager(manager);
-        mRecyclerViewFood.setAdapter(foodAdapter);
+        mRecyclerViewFood.setAdapter(clothesAdapter);
         //Set Recy
-        foodAdapter.setOnItemClickListener(new FoodAdapter.OnItemClickListener() {
+        clothesAdapter.setOnItemClickListener(new ClothesAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(final int Position) {
                 Toast.makeText(getContext(), ""+Position, Toast.LENGTH_SHORT).show();
@@ -99,10 +93,10 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
                         db.daoFood().deleteFooy(foody);
                         try {
                             foodies = (ArrayList<Foody>) db.daoFood().FOODY_LIST();
-                            foodAdapter = new FoodAdapter((ArrayList<Foody>) foodies, getContext());
+                            clothesAdapter = new ClothesAdapter((ArrayList<Foody>) foodies, getContext());
                             RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
                             mRecyclerViewFood.setLayoutManager(manager);
-                            mRecyclerViewFood.setAdapter(foodAdapter);
+                            mRecyclerViewFood.setAdapter(clothesAdapter);
                         }catch (Exception e){
                             Log.e("ERRO",""+e);
                         }
@@ -150,7 +144,7 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
                 foodyList.add(foody);
             }
         }
-        foodAdapter.FilterList(foodyList);
+        clothesAdapter.FilterList(foodyList);
     }
 
     // tim kiem tren recyc

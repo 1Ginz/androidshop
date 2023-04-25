@@ -11,7 +11,7 @@
         android:hint="Nhập tên"
         android:layout_gravity="center"
         android:layout_width="300dp"
-        android:id="@+id/edt_namefood"
+        android:id="@+id/edt_nameitem"
         android:gravity="start"
         android:paddingStart="12dp"
         android:background="@drawable/botron_edt"
@@ -24,7 +24,7 @@
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:textAlignment="textStart"
-        android:id="@+id/spn_food"
+        android:id="@+id/type_item"
         android:layout_margin="10dp"
         android:background="@drawable/botron_edt"/>
 
@@ -76,11 +76,11 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:src="@drawable/logoz"
-        android:id="@+id/imv_add_food"/>
+        android:id="@+id/imv_add_item"/>
     <Button
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_addfood"
+        android:id="@+id/btn_additem"
         android:onClick="AddFood"
         android:layout_marginTop="110dp"
         android:text="Thêm mặt hàng"

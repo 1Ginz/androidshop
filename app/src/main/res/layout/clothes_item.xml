@@ -11,10 +11,10 @@
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:layout_margin="15dp"
-        android:id="@+id/img_food"/>
+        android:id="@+id/img_clothes"/>
     <LinearLayout
         android:layout_width="185dp"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
@@ -25,11 +25,11 @@
             android:layout_marginLeft="10dp"
             android:textSize="20dp"
             android:textColor="#FF5722"
-            android:id="@+id/tv_namefood"/>
+            android:id="@+id/tv_nameclothes"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:text="Type"
             android:textSize="17dp"
             android:textColor="#D6A899"
             android:layout_marginLeft="10dp"
