@@ -7,9 +7,9 @@
         android:title="Trang chủ" />
 
     <item
-        android:id="@+id/add_foodFragment"
+        android:id="@+id/add_itemFragment"
         android:icon="@drawable/add"
-        android:title="Thêm món" />
+        android:title="Thêm sản phẩm" />
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/myorder"

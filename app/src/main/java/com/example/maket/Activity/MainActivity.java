@@ -137,6 +137,5 @@ public class MainActivity extends AppCompatActivity {
         mImageView_addacc=findViewById(R.id.imv_addacc);
         mImageView_cnfb=findViewById(R.id.imv_fb);
         mImageView_cngm=findViewById(R.id.imv_gm);
-        mImageView_Reset=findViewById(R.id.imv_reset);
     }
 }

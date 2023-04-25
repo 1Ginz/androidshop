@@ -17,13 +17,13 @@
         android:background="@drawable/botron_edt"
         />
     <Spinner
-        android:textAlignment="center"
         android:layout_marginTop="17dp"
         android:spinnerMode="dropdown"
         android:layout_gravity="center"
+        android:gravity="start"
         android:layout_width="300dp"
         android:layout_height="30dp"
-        android:gravity="center"
+        android:textAlignment="textStart"
         android:id="@+id/spn_food"
         android:layout_margin="10dp"
         android:background="@drawable/botron_edt"/>

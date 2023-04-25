@@ -1,9 +1,8 @@
-package com.example.maket.ui.add_food;
+package com.example.maket.ui.add_item;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -13,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.provider.MediaStore;
 import android.text.InputType;
@@ -42,7 +40,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddFoodFragment extends Fragment {
+public class AddItemFragment extends Fragment {
     private static final int REQUESTCODE_CAMERA = 777;
     private static final int REQUESTCODE_FOLDER = 999;
     private EditText mEditText_name;
@@ -58,14 +56,14 @@ public class AddFoodFragment extends Fragment {
     Bitmap bitmapImages = null;
 
     private TextView textView;
-    private AddFoodVIewModel addFoodVIewModel;
+    private AddItemVIewModel addItemVIewModel;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        addFoodVIewModel =
-                ViewModelProviders.of(this).get(AddFoodVIewModel.class);
-        View root = inflater.inflate(R.layout.fragment_addfood, container, false);
+        addItemVIewModel =
+                ViewModelProviders.of(this).get(AddItemVIewModel.class);
+        View root = inflater.inflate(R.layout.fragment_add_item, container, false);
         mEditText_name = root.findViewById(R.id.edt_namefood);
         mEditText_price = root.findViewById(R.id.edt_price);
         mEditText_discribe = root.findViewById(R.id.edt_describe);
@@ -167,7 +165,7 @@ public class AddFoodFragment extends Fragment {
             }
         });
 
-
+        getActivity().setTitle("Add item");
         return root;
     }
 

@@ -23,7 +23,7 @@
         android:label="Me"
         tools:layout="@layout/fragment_me" />
     <fragment
-        android:id="@+id/add_foodFragment"
-        android:name="com.example.maket.ui.add_food.AddFoodFragment"
-        android:label="Add_foodFragment" />
+        android:id="@+id/add_itemFragment"
+        android:name="com.example.maket.ui.add_item.AddItemFragment"
+        android:label="Add_ItemFragment" />
 </navigation>

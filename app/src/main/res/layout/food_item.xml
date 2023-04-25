@@ -42,14 +42,15 @@
             android:textSize="17dp"
             android:textColor="#E1A897"
             android:id="@+id/tv_price"/>
+
         <TextView
+            android:id="@+id/tv_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Describe"
-            android:textSize="17dp"
             android:layout_marginLeft="10dp"
+            android:text="Description"
             android:textColor="#D89A86"
-            android:id="@+id/tv_detail"/>
+            android:textSize="17dp" />
     </LinearLayout>
        <ImageView
            android:layout_width="50dp"

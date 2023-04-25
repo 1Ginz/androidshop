@@ -1,15 +1,15 @@
-package com.example.maket.ui.add_food;
+package com.example.maket.ui.add_item;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AddFoodVIewModel extends ViewModel {
+public class AddItemVIewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public AddFoodVIewModel() {
+    public AddItemVIewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is add fodd frament");
+        mText.setValue("This is add item fragment");
     }
 
     public LiveData<String> getText() {

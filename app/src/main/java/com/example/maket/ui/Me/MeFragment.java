@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -23,6 +24,10 @@ import java.util.ArrayList;
 
 public class MeFragment extends Fragment {
 private TextView textViewLogout;
+private ConstraintLayout historyOderView;
+private ConstraintLayout LogoutView;
+private ConstraintLayout changePassView;
+
 private TextView mTextView_name_me;
 private ListView mListView_me;
 TextView mTextViewThunhap;
@@ -45,8 +50,8 @@ TextView changePassTextView;
         meViewModel =
         ViewModelProviders.of(this).get(MeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_me, container, false);
-        textViewLogout =root.findViewById(R.id.logoutTextView);
-        textViewLogout.setOnClickListener(new View.OnClickListener() {
+        LogoutView =root.findViewById(R.id.logout);
+        LogoutView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -86,8 +91,8 @@ TextView changePassTextView;
 //
 //
 
-        changePassTextView = root.findViewById(R.id.changePassTextView);
-        changePassTextView.setOnClickListener(new View.OnClickListener() {
+        changePassView = root.findViewById(R.id.change_pass);
+        changePassView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ResetAccountActivity.class);
@@ -95,8 +100,8 @@ TextView changePassTextView;
             }
         });
 
-        historyOrderTextView = root.findViewById(R.id.historyOrderTextView);
-        historyOrderTextView.setOnClickListener(new View.OnClickListener() {
+        historyOderView = root.findViewById(R.id.history_oder);
+        historyOderView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), HistoryOrderActivity.class);

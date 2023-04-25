@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,12 +24,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.example.maket.Convert.DataConvert;
-import com.example.maket.DAO.AppDatabase;
 import com.example.maket.Entity.Foody;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class DialogEditFood extends AppCompatDialogFragment {
     EditText mEditTextName;
@@ -49,7 +46,7 @@ public class DialogEditFood extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_edit_food, null);
+        View view = inflater.inflate(R.layout.dialog_edit_item, null);
         builder.setTitle("Sửa mặt hàng");
         builder.setView(view);
 //        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
