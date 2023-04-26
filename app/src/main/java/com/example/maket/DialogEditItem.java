@@ -29,7 +29,7 @@ import com.example.maket.Entity.ClothesItem;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class DialogEditFood extends AppCompatDialogFragment {
+public class DialogEditItem extends AppCompatDialogFragment {
     EditText mEditTextName;
     EditText mEditTextPrice;
     EditText mEditTextReview;
@@ -94,7 +94,7 @@ public class DialogEditFood extends AppCompatDialogFragment {
 
         return builder.create();
     }
-
+// requestCode
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 

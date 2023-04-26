@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
         // Set Recy
         db = AppDatabase.getInstance(getContext());
 
-        foodies = (ArrayList<ClothesItem>) db.daoFood().FOODY_LIST();
+        foodies = (ArrayList<ClothesItem>) db.daoFood().Clothes_LIST();
         clothesAdapter = new ClothesAdapter((ArrayList<ClothesItem>) foodies, getContext());
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
         mRecyclerViewFood.setLayoutManager(manager);
@@ -88,11 +88,11 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
                 builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        ArrayList<ClothesItem> foodies1 = (ArrayList<ClothesItem>) db.daoFood().FOODY_LIST();
+                        ArrayList<ClothesItem> foodies1 = (ArrayList<ClothesItem>) db.daoFood().Clothes_LIST();
                         ClothesItem clothesItem = foodies1.get(Position);
                         db.daoFood().deleteFooy(clothesItem);
                         try {
-                            foodies = (ArrayList<ClothesItem>) db.daoFood().FOODY_LIST();
+                            foodies = (ArrayList<ClothesItem>) db.daoFood().Clothes_LIST();
                             clothesAdapter = new ClothesAdapter((ArrayList<ClothesItem>) foodies, getContext());
                             RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
                             mRecyclerViewFood.setLayoutManager(manager);

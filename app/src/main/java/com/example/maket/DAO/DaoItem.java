@@ -12,10 +12,10 @@ import com.example.maket.Entity.ClothesItem;
 import java.util.List;
 
 @Dao
-public interface DaoFood {
+public interface DaoItem {
 
    @Query("Select * from food_db")
-    List <ClothesItem> FOODY_LIST();
+    List <ClothesItem> Clothes_LIST();
    @Insert
     void insertFoody( ClothesItem clothesItem);
    @Update
