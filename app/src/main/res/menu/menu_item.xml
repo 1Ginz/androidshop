@@ -8,4 +8,5 @@
         android:title="Xóa"
         android:id="@+id/menu_xoa"
         />
+<!--    menu-->
 </menu>
