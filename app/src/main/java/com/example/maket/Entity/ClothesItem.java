@@ -5,10 +5,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import java.sql.Blob;
-
 @Entity(tableName = "food_db")
-public class Foody {
+public class ClothesItem {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "name")
@@ -22,7 +20,7 @@ public class Foody {
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     private byte [] image;
 
-    public Foody(int id, String name, String category, Double price, String detail) {
+    public ClothesItem(int id, String name, String category, Double price, String detail) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -30,18 +28,18 @@ public class Foody {
         this.detail = detail;
     }
 
-    public Foody() {
+    public ClothesItem() {
     }
 
     @Ignore
-    public Foody(String name, String category, Double price, String detail) {
+    public ClothesItem(String name, String category, Double price, String detail) {
         this.name = name;
         this.category = category;
         this.price = price;
         this.detail = detail;
     }
 
-    public Foody(String name, String category, Double price, String detail, byte[] image) {
+    public ClothesItem(String name, String category, Double price, String detail, byte[] image) {
         this.name = name;
         this.category = category;
         this.price = price;

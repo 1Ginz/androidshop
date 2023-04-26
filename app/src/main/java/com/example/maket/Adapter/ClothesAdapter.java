@@ -11,14 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.maket.Convert.DataConvert;
-import com.example.maket.Entity.Foody;
+import com.example.maket.Entity.ClothesItem;
 import com.example.maket.R;
 
 import java.util.ArrayList;
 
 public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHolder> {
 
-    ArrayList<Foody> foodyArrayList;
+    ArrayList<ClothesItem> clothesItemArrayList;
     Context context;
 
     private OnItemClickListener mListener;
@@ -32,8 +32,8 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
         mListener=clickListener;
     }
 
-    public ClothesAdapter(ArrayList<Foody> foodyArrayList, Context context) {
-        this.foodyArrayList = foodyArrayList;
+    public ClothesAdapter(ArrayList<ClothesItem> clothesItemArrayList, Context context) {
+        this.clothesItemArrayList = clothesItemArrayList;
         this.context = context;
     }
 
@@ -49,12 +49,12 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Foody foody = foodyArrayList.get(position);
-        holder.mImageViewFood.setImageBitmap(DataConvert.ConvertBitmap(foody.getImage()));
-        holder.mTextViewName.setText(foody.getName());
-        holder.mTextViewPrice.setText(foody.getPrice()+" VNĐ");
-        holder.mTextViewCategory.setText(foody.getCategory());
-        holder.mTextViewDetail.setText(foody.getDetail());
+        ClothesItem clothesItem = clothesItemArrayList.get(position);
+        holder.mImageViewFood.setImageBitmap(DataConvert.ConvertBitmap(clothesItem.getImage()));
+        holder.mTextViewName.setText(clothesItem.getName());
+        holder.mTextViewPrice.setText(clothesItem.getPrice()+" VNĐ");
+        holder.mTextViewCategory.setText(clothesItem.getCategory());
+        holder.mTextViewDetail.setText(clothesItem.getDetail());
     }
 
 
@@ -103,10 +103,10 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHold
     }
     @Override
     public int getItemCount() {
-        return foodyArrayList.size();
+        return clothesItemArrayList.size();
     }
-    public void FilterList(ArrayList<Foody> foodies){
-        foodyArrayList= foodies;
+    public void FilterList(ArrayList<ClothesItem> foodies){
+        clothesItemArrayList = foodies;
         notifyDataSetChanged();
     }
 

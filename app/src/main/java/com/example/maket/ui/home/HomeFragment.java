@@ -25,7 +25,7 @@ import com.example.maket.Adapter.ImagesAdapter;
 import com.example.maket.BottomSheet;
 import com.example.maket.DAO.AppDatabase;
 import com.example.maket.Database.OrderDatabase;
-import com.example.maket.Entity.Foody;
+import com.example.maket.Entity.ClothesItem;
 import com.example.maket.Entity.Order;
 import com.example.maket.Model.Image;
 import com.example.maket.R;
@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
     private EditText mSearchView;
     Context context;
     private AppDatabase db;
-    private ArrayList<Foody> foodies;
+    private ArrayList<ClothesItem> foodies;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -73,8 +73,8 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
         // Set Recy
         db = AppDatabase.getInstance(getContext());
 
-        foodies = (ArrayList<Foody>) db.daoFood().FOODY_LIST();
-        clothesAdapter = new ClothesAdapter((ArrayList<Foody>) foodies, getContext());
+        foodies = (ArrayList<ClothesItem>) db.daoFood().FOODY_LIST();
+        clothesAdapter = new ClothesAdapter((ArrayList<ClothesItem>) foodies, getContext());
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
         mRecyclerViewFood.setLayoutManager(manager);
         mRecyclerViewFood.setAdapter(clothesAdapter);
@@ -88,19 +88,19 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
                 builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        ArrayList<Foody> foodies1 = (ArrayList<Foody>) db.daoFood().FOODY_LIST();
-                        Foody foody= foodies1.get(Position);
-                        db.daoFood().deleteFooy(foody);
+                        ArrayList<ClothesItem> foodies1 = (ArrayList<ClothesItem>) db.daoFood().FOODY_LIST();
+                        ClothesItem clothesItem = foodies1.get(Position);
+                        db.daoFood().deleteFooy(clothesItem);
                         try {
-                            foodies = (ArrayList<Foody>) db.daoFood().FOODY_LIST();
-                            clothesAdapter = new ClothesAdapter((ArrayList<Foody>) foodies, getContext());
+                            foodies = (ArrayList<ClothesItem>) db.daoFood().FOODY_LIST();
+                            clothesAdapter = new ClothesAdapter((ArrayList<ClothesItem>) foodies, getContext());
                             RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
                             mRecyclerViewFood.setLayoutManager(manager);
                             mRecyclerViewFood.setAdapter(clothesAdapter);
                         }catch (Exception e){
                             Log.e("ERRO",""+e);
                         }
-                        Toast.makeText(getContext(), "Đã xóa "+foody.getName(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Đã xóa "+ clothesItem.getName(), Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.show();
@@ -114,11 +114,11 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
                 builder.setPositiveButton("Mua", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Foody foody = foodies.get(Position);
+                        ClothesItem clothesItem = foodies.get(Position);
                         Order order = new Order();
-                        order.setName(foody.getName());
-                        order.setPrice(foody.getPrice());
-                        order.setImage(foody.getImage());
+                        order.setName(clothesItem.getName());
+                        order.setPrice(clothesItem.getPrice());
+                        order.setImage(clothesItem.getImage());
                         OrderDatabase database = OrderDatabase.getInstance(getContext());
                         database.daoOrder().insertorder(order);
                         Toast.makeText(getContext(), "Đã thêm vào đơn hàng ", Toast.LENGTH_SHORT).show();
@@ -138,13 +138,13 @@ public class HomeFragment extends Fragment implements BottomSheet.BottomSheetLis
 
     // tim kiem tren recyc
     private void filter(String Text) {
-        ArrayList<Foody> foodyList = new ArrayList<>();
-        for (Foody foody : foodies) {
-            if (foody.getName().toLowerCase().contains(Text.toLowerCase())) {
-                foodyList.add(foody);
+        ArrayList<ClothesItem> clothesItemList = new ArrayList<>();
+        for (ClothesItem clothesItem : foodies) {
+            if (clothesItem.getName().toLowerCase().contains(Text.toLowerCase())) {
+                clothesItemList.add(clothesItem);
             }
         }
-        clothesAdapter.FilterList(foodyList);
+        clothesAdapter.FilterList(clothesItemList);
     }
 
     // tim kiem tren recyc

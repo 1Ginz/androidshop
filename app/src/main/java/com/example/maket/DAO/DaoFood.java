@@ -7,7 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.example.maket.Entity.Foody;
+import com.example.maket.Entity.ClothesItem;
 
 import java.util.List;
 
@@ -15,13 +15,13 @@ import java.util.List;
 public interface DaoFood {
 
    @Query("Select * from food_db")
-    List <Foody> FOODY_LIST();
+    List <ClothesItem> FOODY_LIST();
    @Insert
-    void insertFoody( Foody foody);
+    void insertFoody( ClothesItem clothesItem);
    @Update
-    void updateFoody( Foody foody);
+    void updateFoody( ClothesItem clothesItem);
    @Delete
-    void deleteFooy(Foody foody);
+    void deleteFooy(ClothesItem clothesItem);
 
 
 

@@ -24,7 +24,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.example.maket.Convert.DataConvert;
-import com.example.maket.Entity.Foody;
+import com.example.maket.Entity.ClothesItem;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -126,12 +126,12 @@ public class DialogEditFood extends AppCompatDialogFragment {
 
     }
 
-    public void EditFood(Foody foody) { ;
+    public void EditFood(ClothesItem clothesItem) { ;
 
-        foody.setName(mEditTextName.getText().toString());
-        foody.setPrice(Double.parseDouble(mEditTextPrice.getText().toString()));
-        foody.setDetail(mEditTextReview.getText().toString());
-        foody.setImage(DataConvert.ConvertImages(bitmapImages));
+        clothesItem.setName(mEditTextName.getText().toString());
+        clothesItem.setPrice(Double.parseDouble(mEditTextPrice.getText().toString()));
+        clothesItem.setDetail(mEditTextReview.getText().toString());
+        clothesItem.setImage(DataConvert.ConvertImages(bitmapImages));
         Toast.makeText(getContext(), "Sửa thành công", Toast.LENGTH_SHORT).show();
     }
     public String Name(){

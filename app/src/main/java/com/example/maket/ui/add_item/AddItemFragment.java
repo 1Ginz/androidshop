@@ -32,7 +32,7 @@ import android.widget.Toast;
 import com.example.maket.Activity.Home_Activity2;
 import com.example.maket.Convert.DataConvert;
 import com.example.maket.DAO.AppDatabase;
-import com.example.maket.Entity.Foody;
+import com.example.maket.Entity.ClothesItem;
 import com.example.maket.R;
 
 import java.io.FileNotFoundException;
@@ -149,14 +149,14 @@ public class AddItemFragment extends Fragment {
 
                 try {
                     AppDatabase db = AppDatabase.getInstance(getContext());
-                    Foody foody = new Foody();
-                    foody.setName(name);
-                    foody.setCategory(loai);
+                    ClothesItem clothesItem = new ClothesItem();
+                    clothesItem.setName(name);
+                    clothesItem.setCategory(loai);
                     Double price = Double.parseDouble(pri);
-                    foody.setPrice(price);
-                    foody.setDetail(review);
-                    foody.setImage(DataConvert.ConvertImages(bitmapImages));
-                    db.daoFood().insertFoody(foody);
+                    clothesItem.setPrice(price);
+                    clothesItem.setDetail(review);
+                    clothesItem.setImage(DataConvert.ConvertImages(bitmapImages));
+                    db.daoFood().insertFoody(clothesItem);
                     Intent intent = new Intent(getContext(), Home_Activity2.class);
                     startActivity(intent);
                 } catch (Exception e) {
