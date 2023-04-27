@@ -1,8 +1,11 @@
 package com.example.maket.ui.add_item;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -30,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maket.Activity.Home_Activity2;
+import com.example.maket.Activity.MainActivity;
 import com.example.maket.Convert.DataConvert;
 import com.example.maket.DAO.AppDatabase;
 import com.example.maket.Entity.ClothesItem;
@@ -126,6 +130,13 @@ public class AddItemFragment extends Fragment {
         mButton_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("login",MODE_PRIVATE);
+                String user = preferences.getString("user", null);
+                if(user == null || !user.equalsIgnoreCase("ADMIN")){
+                    Toast.makeText(getActivity(), "You are NOT Admin!",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
                 String loai = mSpinner_item.getSelectedItem().toString();
                 String name = mEditText_name.getText().toString();
                 String pri = mEditText_price.getText().toString();

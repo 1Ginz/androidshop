@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 @Entity(tableName = "buy_db")
 public class Buy {
     @PrimaryKey(autoGenerate = true)
@@ -13,16 +16,16 @@ public class Buy {
     private Double price;
 
 
-
-
     public Buy() {
     }
 
     public Buy(Double price) {
-
+        this();
         this.price = price;
 
     }
+
+
 
     public int getId() {
         return id;

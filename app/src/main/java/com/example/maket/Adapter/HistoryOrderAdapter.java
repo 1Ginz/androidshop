@@ -51,8 +51,8 @@ public class HistoryOrderAdapter extends RecyclerView.Adapter<HistoryOrderAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Buy buy = buyList.get(position);
-        holder.orderIdTextView.setText(String.valueOf(buy.getId()));
-        holder.totalTextView.setText(String.valueOf(buy.getPrice()));
+        holder.orderIdTextView.setText("MRD" + String.valueOf(buy.getId()));
+        holder.totalTextView.setText("" + String.valueOf(buy.getPrice()) + " VNĐ");
 //        holder.mTextViewName.setText(foody.getName());
 //        holder.mTextViewPrice.setText(foody.getPrice()+" VNĐ");
 //        holder.mTextViewCategory.setText(foody.getCategory());

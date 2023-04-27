@@ -16,6 +16,7 @@ import java.util.List;
 
 public class HistoryOrderActivity extends AppCompatActivity {
 
+    private static int count = 0;
     Context context;
     private HistoryOrderAdapter historyOrderAdapter;
     private RecyclerView historyOrderRecyleView;
@@ -28,6 +29,9 @@ public class HistoryOrderActivity extends AppCompatActivity {
         historyOrderRecyleView = findViewById(R.id.historyOrderRecyleView);
         final BuyDatabase database = BuyDatabase.getInstance(getApplicationContext());
         List<Buy> orderArrayList =  database.daoBuy().BUY_LIST();
+        if(count == 0) {
+            count++;
+        }
         historyOrderAdapter = new HistoryOrderAdapter(orderArrayList);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
         historyOrderRecyleView.setLayoutManager(manager);
